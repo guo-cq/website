@@ -9,11 +9,13 @@ badge: "T-RO"
 tags: ["Visuotactile Perception", "Event-based Vision", "Screw-actuated Robot"]
 ---
 
-<div style="text-align: center; margin-top: 20px;">
+<div style="text-align: center; margin: 20px 0 32px;">
 <a href="/publications" style="text-decoration: none;">
 <span aria-hidden="true">📄</span> <span style="text-decoration: underline;">Paper</span>
 </a>
 </div>
+
+
 
 <div style="max-width: 640px; margin: 0 auto; text-align: center;">
 

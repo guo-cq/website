@@ -10,6 +10,13 @@ tags: ["Robotics","Agent", "Chemistry"]
 
 The advent of simulation engines has revolutionized learning and operational efficiency for robots, offering cost-effective and swift pipelines. However, the lack of a universal simulation platform tailored for chemical scenarios impedes progress in robotic manipulation and visualization of reaction processes. Addressing this void, we present Chemistry3D, an innovative toolkit that integrates extensive chemical and robotic knowledge. 
 
+<div style="text-align: center; margin: 20px 0 32px;">
+<a href="/publications" style="text-decoration: none;">
+<span aria-hidden="true">📄</span> <span style="text-decoration: underline;">Paper</span>
+</a>
+</div>
+
+
 <div style="max-width: 640px; margin: 0 auto; text-align: center;">
 
 <iframe src="https://drive.google.com/file/d/1l8iZ9aTHS1QNr0m0EscON7BuktQfULCa/preview" width="640" height="360" allow="autoplay" style="display: block; width: 100%; max-width: 640px; margin: 0 auto; border: none;"></iframe>

@@ -9,9 +9,17 @@ tags: ["Tendon-Driven", "Multiplexing", "Fault Tolerance"]
 
 Robotic manipulators for aerospace missions must stay lightweight while remaining dependable in remote and hazardous environments. To meet these constraints, we introduce Time-Division Multiplexing Actuation (TDMA), a practical actuation strategy for tendon-driven robots that reduces the number of actuators without sacrificing torque output or fault tolerance.
 
+
+<div style="text-align: center; margin: 20px 0 32px;">
+<a href="/publications" style="text-decoration: none;">
+<span aria-hidden="true">📄</span> <span style="text-decoration: underline;">Paper</span>
+</a>
+</div>
+
+
 <div style="max-width: 640px; margin: 0 auto; text-align: center;">
 
-<iframe src="https://www.youtube.com/embed/PASTE_VIDEO_ID_HERE" width="640" height="360" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display: block; width: 100%; max-width: 640px; margin: 0 auto; border: none;"></iframe>
+<iframe src="https://www.youtube.com/embed/EeqdluQUVsQ" width="640" height="360" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display: block; width: 100%; max-width: 640px; margin: 0 auto; border: none;"></iframe>
 
 *Introduction Video*
 
