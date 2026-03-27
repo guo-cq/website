@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Contact" sideBarActiveItemID="contact">
+  <div class="mb-8">
+    <div class="text-3xl w-full font-bold mb-6">Contact Information</div>
+  </div>
+
+  <div class="space-y-8">
+    <!-- Email Addresses -->
+    <div class="bg-base-100 p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-bold text-primary mb-4">Email</h3>
+      <div class="space-y-3">
+        <div>
+          <p class="text-sm text-gray-500 mb-1">Academic Email</p>
+          <a href="mailto:gcq24@mails.tsinghua.edu.cn" class="text-lg text-blue-500 hover:underline">
+            gcq24@mails.tsinghua.edu.cn
+          </a>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500 mb-1">Personal Email</p>
+          <a href="mailto:georgeguo04@gmail.com" class="text-lg text-blue-500 hover:underline">
+            georgeguo04@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="bg-base-100 p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-bold text-primary mb-4">Professional Network</h3>
+      <div>
+        <p class="text-sm text-gray-500 mb-1">LinkedIn Profile</p>
+        <a href="https://www.linkedin.com/in/changqing-guo" target="_blank" class="text-lg text-blue-500 hover:underline">
+          linkedin.com/in/changqing-guo
+        </a>
+      </div>
+    </div>
+
+    <!-- Additional Information -->
+    <div class="bg-base-100 p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-bold text-primary mb-4">Research Collaboration</h3>
+      <p class="text-gray-600">
+        I am always interested in discussing research opportunities, collaborations, and academic exchanges. 
+        Feel free to reach out if you would like to discuss potential projects or PhD opportunities.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

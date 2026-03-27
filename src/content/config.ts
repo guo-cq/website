@@ -24,13 +24,30 @@ const storeSchema = z.object({
     heroImage: z.string().optional(),
 });
 
+const researchSchema = z.object({
+    title: z.string(),
+    description: z.string(),
+    journal: z.string().optional(),
+    updatedDate: z.string().optional(),
+    heroImage: z.string().optional(),
+    badge: z.string().optional(),
+    side: z.enum(["left", "right"]).optional(),
+    position: z.number().optional(),
+    tags: z.array(z.string()).refine(items => new Set(items).size === items.length, {
+        message: 'tags must be unique',
+    }).optional(),
+});
+
 export type BlogSchema = z.infer<typeof blogSchema>;
 export type StoreSchema = z.infer<typeof storeSchema>;
+export type ResearchSchema = z.infer<typeof researchSchema>;
 
 const blogCollection = defineCollection({ schema: blogSchema });
 const storeCollection = defineCollection({ schema: storeSchema });
+const researchCollection = defineCollection({ schema: researchSchema });
 
 export const collections = {
     'blog': blogCollection,
-    'store': storeCollection
+    'store': storeCollection,
+    'research': researchCollection
 }

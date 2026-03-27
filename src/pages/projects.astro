@@ -1,51 +1,164 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+import createSlug from "../lib/createSlug";
+import { Image } from "astro:assets";
+
+const researchProjects = await getCollection("research");
+
+// Separate into left and right based on side field, then sort by position
+const leftProjects = researchProjects
+  .filter(project => project.data.side === "left")
+  .sort((a, b) => (a.data.position || 999) - (b.data.position || 999));
+
+const rightProjects = researchProjects
+  .filter(project => project.data.side === "right")
+  .sort((a, b) => (a.data.position || 999) - (b.data.position || 999));
+
+// Create rows pairing left and right projects
+const maxRows = Math.max(leftProjects.length, rightProjects.length);
+const rows = [];
+for (let i = 0; i < maxRows; i++) {
+  rows.push({
+    left: leftProjects[i] || null,
+    right: rightProjects[i] || null,
+  });
+}
 ---
 
-<BaseLayout title = "Projects" sideBarActiveItemID="projects">
-  <div>
-    <div class="text-3xl w-full font-bold mb-5">Projects Header</div>
+<BaseLayout title = "Research" sideBarActiveItemID="projects">
+  <div class="mb-8">
+    <div class="text-3xl w-full font-bold">Research Projects</div>
+    <p class="text-sm text-base-content/70 mt-2">Explore my research journey</p>
   </div>
 
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
+  <div class="relative w-full mx-auto px-2">
+    <!-- Title -->
+    <div class="flex justify-center mb-1">
+      <h2 class="text-2xl font-bold text-primary">Robotics & AI</h2>
+    </div>
+    
+    <!-- Arrow positioned absolutely right after title -->
+    <div class="absolute left-1/2 -translate-x-1/2" style="top: 50px; z-index: 30;">
+      <svg
+        class="w-6 text-primary"
+        style="height: 200px;"
+        viewBox="0 0 24 200"
+        fill="currentColor"
+      >
+        <path d="M12 0 L4 10 L10 10 L10 200 L14 200 L14 10 L20 10 Z" />
+      </svg>
+    </div>
+    
+    <!-- Hardware and Algorithm labels -->
+    <div class="relative flex justify-center gap-6 mb-1">
+      <div class="flex-1 text-center">
+        <h3 class="text-xl font-semibold text-base-content/80">Hardware</h3>
+      </div>
+      <div class="flex-shrink-0 w-8"></div>
+      <div class="flex-1 text-center">
+        <h3 class="text-xl font-semibold text-base-content/80">Algorithm</h3>
+      </div>
+    </div>
+    
+    <div class="relative flex justify-center gap-6">
+      <!-- Left column - tightly stacked -->
+      <div class="flex-1 space-y-4 flex flex-col items-end relative" style="max-width: none;">
+        {leftProjects.map((project, index) => (
+          <div class="relative w-full">
+            <a href={"/research/" + createSlug(project.data.title, project.slug)} target="_self" class="block w-full">
+              <div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[101%] p-5 shadow-md">
+                {project.data.heroImage && (
+                  <div class="w-full h-32 mb-3">
+                    <Image
+                      src={project.data.heroImage}
+                      width={800}
+                      height={128}
+                      format="webp"
+                      alt={project.data.title}
+                      class="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
+                )}
+                <h3 class="text-lg font-bold mb-2">
+                  {project.data.title}
+                </h3>
+                {project.data.journal?.trim() && (
+                  <p class="text-xs text-base-content/70 mb-2">
+                    Published on {project.data.journal}
+                  </p>
+                )}
+                <p class="text-sm mb-2 whitespace-normal break-words">{project.data.description}</p>
+                {project.data.tags && (
+                  <div class="flex flex-wrap gap-1.5">
+                    {project.data.tags.map((tag) => (
+                      <span class="badge badge-outline badge-xs">{tag}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </a>
+            <!-- Node for this left project -->
+            <div class="absolute right-0 top-1/2 w-5 h-5 bg-primary rounded-full z-20 shadow-lg hidden md:block" style="transform: translate(calc(100% + 14px), -50%); margin-right: -2px; box-shadow: 0 0 0 4px hsl(var(--b1));"></div>
+          </div>
+        ))}
+      </div>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Projects Header</div>
+      <!-- Center timeline line -->
+      <div class="relative flex-shrink-0 w-1 hidden md:block">
+        <div class="absolute left-1/2 top-0 bottom-0 w-[4px] bg-primary -translate-x-1/2"></div>
+      </div>
+
+      <!-- Right column - tightly stacked, starts lower -->
+      <div class="flex-1 space-y-4 flex flex-col items-start relative" style="margin-top: 83px; max-width: none;">
+        {rightProjects.map((project, index) => (
+          <div class="relative w-full">
+            <a href={"/research/" + createSlug(project.data.title, project.slug)} target="_self" class="block w-full">
+              <div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[101%] p-5 shadow-md">
+                {project.data.heroImage && (
+                  <div class="w-full h-32 mb-3">
+                    <Image
+                      src={project.data.heroImage}
+                      width={800}
+                      height={128}
+                      format="webp"
+                      alt={project.data.title}
+                      class="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
+                )}
+                <h3 class="text-lg font-bold mb-2">
+                  {project.data.title}
+                </h3>
+                {project.data.journal?.trim() && (
+                  <p class="text-xs text-base-content/70 mb-2">
+                    Published on {project.data.journal}
+                  </p>
+                )}
+                <p class="text-sm mb-2 whitespace-normal break-words">{project.data.description}</p>
+                {project.data.tags && (
+                  <div class="flex flex-wrap gap-1.5">
+                    {project.data.tags.map((tag) => (
+                      <span class="badge badge-outline badge-xs">{tag}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </a>
+            <!-- Node for this right project -->
+            <div class="absolute left-0 top-1/2 w-5 h-5 bg-primary rounded-full z-20 shadow-lg hidden md:block" style="transform: translate(calc(-100% - 14px), -50%); margin-left: -2px; box-shadow: 0 0 0 4px hsl(var(--b1));"></div>
+          </div>
+        ))}
+      </div>
+    </div>
   </div>
 
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 4"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 5"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
+  <!-- Mobile view: single column with timeline -->
+  <style>
+    @media (max-width: 768px) {
+      .md\:block {
+        display: none !important;
+      }
+    }
+  </style>
 </BaseLayout>

@@ -3,38 +3,64 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 ---
 
-<BaseLayout title="Projects" sideBarActiveItemID="services">
+<BaseLayout title="Teaching" sideBarActiveItemID="services">
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Services Header</div>
+    <div class="text-3xl w-full font-bold mb-5">Teaching Experience</div>
   </div>
 
   <HorizontalCard
-    title="Service 1"
+    title="Teaching Assistant - [Course Name]"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    badge="NEW"
+    desc="Assisted in teaching undergraduate/graduate course, including conducting tutorials, grading assignments, and providing student support. Developed pedagogical skills and gained experience in academic instruction."
+    badge="CURRENT"
     url="#"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Service 2"
+    title="Guest Lecturer"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="Delivered guest lectures on specialized topics within my research area, sharing expertise with students and contributing to curriculum enrichment."
     url="#"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Service 3"
+    title="Academic Tutoring"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="Provided individual and group tutoring sessions for undergraduate students, helping them understand complex concepts and improve academic performance."
     url="#"
-    badge="NEW"
+    badge="ONGOING"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Service 4"
+    title="Workshop Facilitation"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="Organized and facilitated academic workshops on research methodology, academic writing, and professional development for fellow graduate students."
+    url="#"
+  />
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Academic Service</div>
+  </div>
+
+  <HorizontalCard
+    title="Peer Review"
+    img="/post_img.webp"
+    desc="Served as peer reviewer for academic journals and conferences, contributing to the quality assurance of scholarly publications in my field."
+    url="#"
+    badge="ACTIVE"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Conference Organization"
+    img="/post_img.webp"
+    desc="Participated in organizing academic conferences and symposiums, including program committee work and event coordination."
+    url="#"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Editorial Board"
+    img="/post_img.webp"
+    desc="Served on editorial boards of student publications and academic journals, contributing to editorial decision-making and publication processes."
     url="#"
   />
 </BaseLayout>

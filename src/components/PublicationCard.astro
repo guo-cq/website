@@ -1,0 +1,38 @@
+---
+export interface Props {
+  title: string;
+  authors: string;
+  pdfUrl: string;
+  img: string;
+  journal?: string;
+}
+
+const { title, authors, pdfUrl, img, journal } = Astro.props;
+import { Image } from "astro:assets";
+---
+
+<div class="card card-side bg-base-100 shadow-xl mb-4 min-h-[128px]">
+  <figure class="w-52 h-32 flex-shrink-0 self-center p-1">
+    <Image
+      src={img}
+      width={208}
+      height={128}
+      format="webp"
+      alt={title}
+      class="w-full h-full object-cover rounded-lg"
+    />
+  </figure>
+  <div class="card-body flex-1 flex flex-col justify-center py-4">
+    <div class="flex-1">
+      <h2 class="card-title text-lg font-bold text-black mb-2">
+        <a href={pdfUrl} target="_blank" class="hover:text-primary">
+          {title}
+        </a>
+      </h2>
+      <p class="text-sm text-gray-600 mb-2" set:html={authors} style="strong { color: black; }"></p>
+      {journal && (
+        <p class="text-sm font-bold text-primary mb-3">{journal}</p>
+      )}
+    </div>
+  </div>
+</div>

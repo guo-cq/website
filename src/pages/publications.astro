@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PublicationCard from "../components/PublicationCard.astro";
+---
+
+<BaseLayout title="Publications" sideBarActiveItemID="publications">
+  <div class="mb-8">
+    <div class="text-3xl w-full font-bold mb-6">Selected Publications</div>
+  </div>
+
+  <!-- First Author Publications (4篇) -->
+  <PublicationCard
+    title="Time-Division Multiplexing Actuation in Tendon-Driven Arms: Lightweight Design and Fault Tolerance"
+    authors="Shoujie Li*, <strong>Changqing Guo*</strong>, Student Member, IEEE, Jianle Xu, Hong Luo, Xueqian Wang, Member, IEEE, Wenbo Ding, Member, IEEE, Bin Liang, Senior Member, IEEE"
+    journal="IEEE Transactions on Mechatronics (T-Mech), Under Review, 2026"
+    pdfUrl="/Time_Division_Multiplexing_Actuation_in_Tendon_Driven_Arms__Lightweight_Design_and_Fault_Tolerance-3.pdf"
+    img="/pub2.png"
+  />
+  
+  <PublicationCard
+    title="SandWorm: Event-based Visuotactile Perception with Active Vibration for Screw-Actuated Robot in Granular Media"
+    authors="Shoujie Li*, <strong>Changqing Guo*</strong>, Junhao Gong, Chenxin Liang, Wenhua Ding, Wenbo Ding"
+    journal="IEEE Transactions on Robotics (T-RO), 2026"
+    pdfUrl="/SandWorm_GCQ_TRO-2.pdf"
+    img="/pub1.png"
+  />
+  
+  <PublicationCard
+    title="Chemistry3D: Robotic Interaction Toolkit for Chemistry Experiments"
+    authors="Shoujie Li*, Yan Huang*, <strong>Changqing Guo*</strong>, Tong Wu, Jiawei Zhang, Linrui Zhang, Wenbo Ding"
+    journal="IEEE International Conference on Robotics and Automation (ICRA), 2025"
+    pdfUrl="/NeurIPS_24_LSJ-2.pdf"
+    img="/pub4.png"
+  />
+  
+  <PublicationCard
+    title="A Machine Vision Enabled Implantable pH Sensing Scheme Using Ultrasonic Images of Microcomposite Hydrogels"
+    authors="<strong>Changqing Guo</strong>, Yike Wu, Yi Ma, and Hongjie Jiang"
+    journal="IEEE Sensors Journal, 2023"
+    pdfUrl="/A_Machine_Vision_Enabled_Implantable_pH_Sensing_Scheme_Using_Ultrasonic_Images_of_Microcomposite_Hydrogels.pdf"
+    img="/pub3.png"
+  />
+
+  <!-- Co-author Publications (按时间顺序) -->
+  <PublicationCard
+    title="CEI: A Unified Interface for Cross-Embodiment Visuomotor Policy Learning in 3D Space"
+    authors="Tong Wu, Shoujie Li, Junhao Gong, <strong>Changqing Guo</strong>, Xingting Li, Shilong Mu, Wenbo Ding"
+    journal="IEEE Robotics and Automation Letters (RAL), 2026"
+    pdfUrl="https://ieeexplore.ieee.org/document/11361084"
+    img="/cei.png"
+  />
+
+  <PublicationCard
+    title="MultiHand: Design and Verification of a Dexterous Hand with Multi-modal Grasping Capabilities"
+    authors="Yaopeng Tian, <strong>Changqing Guo</strong>, Shoujie Li, Chenxin Liang, Junbo Tan, Xueqian Wang"
+    journal="IEEE International Conference on Robotics and Automation (ICRA), 2026"
+    pdfUrl="#"
+    img="/hand.png"
+  />
+
+  <PublicationCard
+    title="UltraTac: Integrated Ultrasound-Augmented Visuotactile Sensor for Enhanced Robotic Perception"
+    authors="Junhao Gong, Kit-Wa Sou, Shoujie Li, <strong>Changqing Guo</strong>, Yan Huang, Chuqiao Lyu, Ziwu Song, Wenbo Ding"
+    journal="IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2025"
+    pdfUrl="https://ieeexplore.ieee.org/document/11247435"
+    img="/ultra.png"
+  />
+</BaseLayout>

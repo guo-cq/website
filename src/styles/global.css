@@ -1,3 +1,23 @@
 .time-line-container>div:last-child .education__time>.education__line {
     display: none;
 }
+
+/* Research Timeline Styles */
+.research-timeline > .timeline-item:last-child .research__line {
+    display: none;
+}
+
+/* Responsive adjustments for research timeline */
+@media (max-width: 768px) {
+    .timeline-item {
+        grid-template-columns: auto 1fr !important;
+    }
+    
+    .timeline-item > div:first-child {
+        display: none !important;
+    }
+    
+    .timeline-item > div:last-child {
+        visibility: visible !important;
+    }
+}

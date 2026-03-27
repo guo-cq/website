@@ -11,14 +11,16 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
     <div class="hero-content flex-col md:flex-row">
       {
         img && (
-          <Image
-            src={img}
-            width={750}
-            height={422}
-            format="webp"
-            alt={title}
-            class="max-w-full md:max-w-[13rem] rounded-lg"
-          />
+          <div class="w-full md:w-52 h-32 md:h-32 flex-shrink-0">
+            <Image
+              src={img}
+              width={208}
+              height={128}
+              format="webp"
+              alt={title}
+              class="w-full h-full object-cover rounded-lg"
+            />
+          </div>
         )
       }
       <div class="grow w-full">
@@ -27,16 +29,13 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
           {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
         </h1>
         <p class="py-1 text-1xl">{desc}</p>
-        <div class="card-actions justify-end">
-          {
-            tags &&
-              tags.map((tag) => (
-                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
-                  {tag}
-                </a>
-              ))
-          }
-        </div>
+        {tags && (
+          <div class="flex flex-wrap gap-2 mt-2">
+            {tags.map((tag) => (
+              <span class="badge badge-outline badge-sm">{tag}</span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   </a>

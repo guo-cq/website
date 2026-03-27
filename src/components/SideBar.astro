@@ -10,9 +10,18 @@ const { sideBarActiveItemID } = Astro.props;
   <aside class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col">
     <div class="w-fit mx-auto mt-5 mb-6">
       <a href="/">
-        <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
-          <div class="w-[8.5rem]">
-            <Image class="mask mask-circle" format="webp" width={300} height={300} src="/profile.webp" alt="Profile image" />
+        <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto select-none" data-protected-photo>
+          <div class="w-[10rem]">
+            <Image
+              class="mask mask-circle select-none pointer-events-none"
+              format="webp"
+              width={300}
+              height={300}
+              src="/photo3.jpg"
+              alt="Profile image"
+              draggable="false"
+              style="-webkit-user-drag: none; user-select: none; -webkit-touch-callout: none;"
+            />
           </div>
         </div>
       </a>
@@ -21,3 +30,25 @@ const { sideBarActiveItemID } = Astro.props;
     <SideBarFooter />
   </aside>
 </div>
+
+<script is:inline>
+  const protectSidebarPhoto = () => {
+    const protectedPhotos = document.querySelectorAll("[data-protected-photo]");
+
+    protectedPhotos.forEach((photo) => {
+      if (photo.dataset.protectionBound === "true") return;
+      photo.dataset.protectionBound = "true";
+
+      const blockEvent = (event) => {
+        event.preventDefault();
+      };
+
+      ["contextmenu", "dragstart", "selectstart", "copy"].forEach((eventName) => {
+        photo.addEventListener(eventName, blockEvent);
+      });
+    });
+  };
+
+  protectSidebarPhoto();
+  document.addEventListener("astro:page-load", protectSidebarPhoto);
+</script>
