@@ -13,7 +13,7 @@ This section encompasses a diverse collection of undergraduate research projects
 
 <div style="text-align: center;">
 
-![Structure diagram](p1.jpg)
+![Structure diagram](./p1.jpg)
 
 </div>
 
@@ -33,7 +33,7 @@ This section encompasses a diverse collection of undergraduate research projects
 
 <div style="text-align: center;">
 
-![Structure diagram](p2.jpg)
+![Structure diagram](./p2.jpg)
 
 </div>
 
@@ -54,7 +54,7 @@ Developed a mathematical model to formulate the ideal pacing strategy for compet
 
 <div style="text-align: center;">
 
-![Structure diagram](p3.jpg)
+![Structure diagram](./p3.jpg)
 
 </div>
 
@@ -74,7 +74,7 @@ Developed a simulation and control model for the da Vinci Medical Robot, focusin
 ### POV-RGB Rotating Display System
 <div style="text-align: center;">
 
-![Structure diagram](p4.jpg)
+![Structure diagram](./p4.jpg)
 
 </div>
 

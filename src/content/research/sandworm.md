@@ -27,7 +27,7 @@ This project addresses the fundamental challenges of robotic perception and loco
 
 <div style="text-align: center;">
 
-![Structure diagram](struc.gif)
+![Structure diagram](./struc.gif)
 
 *Integrating vibration to event-based perception*
 
@@ -37,7 +37,7 @@ Inspired by pioneering works like AMI-EV, Evetac, and ARCsnake, we systematicall
 
 <div style="text-align: center;">
 
-![IMU integration](imu.jpg)
+![IMU integration](./imu.jpg)
 
 *Active vibration induces fluctuations in event density, which can be estimated and filtered by the IMU signal*
 
@@ -47,7 +47,7 @@ Leveraging onboard IMU data, we further enhanced the perception ability with an 
 
 <div style="text-align: center;">
 
-![Experiment demonstration](exp.gif)
+![Experiment demonstration](./exp.gif)
 
 *Field experiment of the SandWorm robot, demonstrating its locomotion and perception abilities in granular materials*
 
